@@ -1,0 +1,32 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<div class="container h-100">
+    <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+          <h1>Pick your question</h1>
+            <div class="card h-50 justify-content-center">
+
+{% if latest_question_list %}
+<ul>
+  {% for question in latest_question_list %}
+  <li>
+    {{ forloop.counter }}. <a href="{% url 'polls:detail' question.id %}"
+      >{{ question.question_text }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
+
+</div>
+</div>
+</div>
+</div>
+</div>

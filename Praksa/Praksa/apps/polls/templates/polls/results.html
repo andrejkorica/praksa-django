@@ -1,0 +1,36 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}?{% now "U" %}">
+
+<div class="container h-100">
+    <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+            <h1>{{ question.question_text }}</h1>
+
+            <div class="card h-50 justify-content-center">
+
+
+                
+
+<ul class="results">
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' question.id %}" class="text-center"><button  class="btn btn-outline-primary">Vote again?</button></a>
+<a href="{% url 'polls:index' %}" class="text-center"><button  class="btn btn-outline-secondary">another question?</button></a>
+<a href="/" class="text-center"><button  class="btn btn-outline-secondary">Back to main page</button></a>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>

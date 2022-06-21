@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from ensurepip import bootstrap
 import os
 from pathlib import Path
 
@@ -62,6 +63,9 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_snippet',
     'djangocms_style',
+    'Praksa.apps.polls',
+    'bootstrap5',
+    
 ]
 
 THUMBNAIL_HIGH_RESOLUTION = True

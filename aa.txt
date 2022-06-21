@@ -1,0 +1,2 @@
+python manage.py migrate --run-syncdb 
+source venv/scripts/activate
