@@ -47,7 +47,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Sailor</a></h1>
+      <h1 class="logo me-auto"><a href="index.html">{% render_model request.current_page "title" %}</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -56,7 +56,7 @@
 
           <ul>
 
-        <li><a style="color: red">home</a></li>
+        <li><a style="color: red">Home</a></li>
         <li><a href="/about"> About </a></li>
 
           </ul>
@@ -79,8 +79,8 @@
         <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-1.jpg' %})">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Sailor</span></h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+              <h2 class="animate__animated animate__fadeInDown">{% placeholder "glavni-naslov" or %}Welcome to <span>Sailor</span>{% endplaceholder %}</h2>
+              <div class="animate__animated animate__fadeInDown">{% placeholder "polls-opis" or %}Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.{% endplaceholder %}</div>
               <a href="polls" class="btn-get-started animate__animated animate__fadeInUp scrollto">Go to polls page!</a>
             </div>
           </div>
@@ -90,19 +90,21 @@
         <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/slide-2.jpg' %})">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+              <h2 class="animate__animated animate__fadeInDown">{% placeholder "glavni-naslov-2" or %}Lorem Ipsum Dolor{% endplaceholder %}</h2>
+              <div class="animate__animated animate__fadeInDown"> {% placeholder "polls-opis" or %}Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.{% endplaceholder %} </div>
               <a href="polls" class="btn-get-started animate__animated animate__fadeInUp scrollto">Go to polls page!</a>
             </div>
           </div>
         </div>
-
+        
+        
+        
         <!-- Slide 3 -->
         <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/slide-3.jpg' %})">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+              <h2 class="animate__animated animate__fadeInDown">{% placeholder "glavni-naslov-3" or %}Sequi ea ut et est quaerat{% endplaceholder %}</h2>
+              <div class="animate__animated animate__fadeInDown"> {% placeholder "polls-opis" or %} Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.{% endplaceholder %} </div>
               <a href="polls" class="btn-get-started animate__animated animate__fadeInUp scrollto">Go to polls page!</a>
             </div>
           </div>
@@ -129,8 +131,11 @@
 
         <div class="row content">
           <div class="col-lg-6">
-            <h2>Eum ipsam laborum deleniti velitena</h2>
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+            <h2> {% placeholder "Sporedni-naslov" or %} Eum ipsam laborum deleniti velitena {% endplaceholder %} </h2>
+            
+            
+             <h3> {% placeholder "Opis-sporednog-naslova" or %} Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave {% endplaceholder %} </h3>
+        
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <ul>
@@ -234,6 +239,8 @@
 
       </div>
     </section><!-- End Services Section -->
+    
+     {% placeholder "mapa" or %} <div style="display: flex; justify-content: center;"><img src="http://dutch.lib.uiowa.edu/images/empty_map.jpg" alt=""></div>  {% endplaceholder %}
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
@@ -254,7 +261,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
+              {% placeholder "slika1" or %}<img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">{% endplaceholder %}
               <div class="portfolio-info">
                 <h4>App 1</h4>
                 <p>App</p>
@@ -268,7 +275,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
+              {% placeholder "slika2" or %} <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt=""> {% endplaceholder %}
               <div class="portfolio-info">
                 <h4>Web 3</h4>
                 <p>Web</p>
@@ -282,7 +289,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
+              {% placeholder "slika3" or %} <img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt=""> {% endplaceholder %}
               <div class="portfolio-info">
                 <h4>App 2</h4>
                 <p>App</p>
@@ -296,7 +303,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
+              {% placeholder "slika4" or %} <img src="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt=""> {% endplaceholder %}
               <div class="portfolio-info">
                 <h4>Card 2</h4>
                 <p>Card</p>
@@ -310,7 +317,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="">
+              {% placeholder "slika5" or %} <img src="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt=""> {% endplaceholder %}
               <div class="portfolio-info">
                 <h4>Web 2</h4>
                 <p>Web</p>
@@ -324,7 +331,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="">
+              {% placeholder "slika6" or %} <img src="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt=""> {% endplaceholder %}
               <div class="portfolio-info">
                 <h4>App 3</h4>
                 <p>App</p>
@@ -338,7 +345,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">
+              {% placeholder "slika7" or %} <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt=""> {% endplaceholder %} 
               <div class="portfolio-info">
                 <h4>Card 1</h4>
                 <p>Card</p>
@@ -352,7 +359,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="">
+              {% placeholder "slika7" or %} <img src="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt=""> {% endplaceholder %} 
               <div class="portfolio-info">
                 <h4>Card 3</h4>
                 <p>Card</p>
@@ -366,7 +373,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt="">
+              {% placeholder "slika8" or %}  <img src="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt=""> {% endplaceholder %} 
               <div class="portfolio-info">
                 <h4>Web 3</h4>
                 <p>Web</p>

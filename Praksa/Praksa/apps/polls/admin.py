@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Question, Choice
+from cms.admin.placeholderadmin import FrontendEditableAdminMixin
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
@@ -16,3 +17,4 @@ class QuestionAdmin(admin.ModelAdmin):
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)
+

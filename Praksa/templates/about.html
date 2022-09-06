@@ -45,7 +45,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Sailor</a></h1>
+      <h1 class="logo me-auto"><a href="index.html">{% render_model request.current_page "title" %}</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 {% block breadcrumb %}
@@ -53,7 +53,7 @@
 
         <ul>
 
-<li><a href="/">home</a></li>
+<li><a href="/">Home</a></li>
 <li><a style="color: red"> About </a></li>
 
 
